@@ -2,7 +2,10 @@
 //  ViewController.swift
 //  final-bmi
 //
-//  Created by Cadence Kuan on 13/12/2022.
+//  Created by Cadence Sao I Kuan on 13/12/2022.
+//  STD# 301204757
+//  https://github.com/sikuan/final-bmi
+//
 //
 
 import UIKit
