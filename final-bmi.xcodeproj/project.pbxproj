@@ -15,7 +15,7 @@
 		0E1A30EC29484ECD004A0B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A30EA29484ECD004A0B2C /* LaunchScreen.storyboard */; };
 		0E32AEB5294C3EFE00B9D845 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32AEB4294C3EFE00B9D845 /* TableViewController.swift */; };
 		0E32AEB7294C412700B9D845 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32AEB6294C412700B9D845 /* EditViewController.swift */; };
-		0E32AEBC294C5CB000B9D845 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32AEBB294C5CB000B9D845 /* TableViewCell.swift */; };
+		0E32AEBE294C60F500B9D845 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32AEBD294C60F500B9D845 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		0E1A30ED29484ECD004A0B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E32AEB4294C3EFE00B9D845 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0E32AEB6294C412700B9D845 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		0E32AEBB294C5CB000B9D845 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		0E32AEBD294C60F500B9D845 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				0E1A30E829484ECD004A0B2C /* Assets.xcassets */,
 				0E1A30EA29484ECD004A0B2C /* LaunchScreen.storyboard */,
 				0E1A30ED29484ECD004A0B2C /* Info.plist */,
-				0E32AEBB294C5CB000B9D845 /* TableViewCell.swift */,
+				0E32AEBD294C60F500B9D845 /* TableViewCell.swift */,
 			);
 			path = "final-bmi";
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 				0E32AEB7294C412700B9D845 /* EditViewController.swift in Sources */,
 				0E1A30E429484ECC004A0B2C /* ViewController.swift in Sources */,
 				0E1A30E029484ECC004A0B2C /* AppDelegate.swift in Sources */,
-				0E32AEBC294C5CB000B9D845 /* TableViewCell.swift in Sources */,
+				0E32AEBE294C60F500B9D845 /* TableViewCell.swift in Sources */,
 				0E1A30E229484ECC004A0B2C /* SceneDelegate.swift in Sources */,
 				0E32AEB5294C3EFE00B9D845 /* TableViewController.swift in Sources */,
 			);

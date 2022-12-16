@@ -16,13 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var GenderText: UITextField!
     @IBOutlet weak var ResultStatus: UILabel!
     @IBOutlet weak var BMIResult: UILabel!
-     // M: kg/m^2  I: p*703/inch^2
+    // M: kg/m^2  I: p*703/inch^2
     @IBOutlet weak var mBtn: UIButton!
     @IBOutlet weak var iBtn: UIButton!
     
     let defaults = UserDefaults.standard // DB
     var InfoArr = [[String:String]]() //DB
-    var MeasurementStatus:String = "Metric"
+    var MeasurementStatus:String = "metric"
     let InputArray:[Character] = ["0","1","2","3","4","5","6","7","8","9","."]
     
     override func viewDidLoad() {
@@ -34,20 +34,24 @@ class ViewController: UIViewController {
             defaults.set(InfoArr,forKey:"arrayList")}
     }
     
+    // metric btn
     @IBAction func mBtn_Pressed(_ sender: UIButton) {
         MeasurementStatus = "metric"
         WeightText.placeholder = "kg"
         HeightText.placeholder = "m"
     }
     
+    // imperial btn
     @IBAction func iBtn_Pressed(_ sender: UIButton) {
         MeasurementStatus = "imperial"
         WeightText.placeholder = "pound"
         HeightText.placeholder = "inch"
     }
     
+    // calculation btn
     @IBAction func calBtn_Pressed(_ sender: UIButton){
         
+        // check string
         func strChecker(str:String)->Bool{
             for char in str {
                 if !InputArray.contains(char){
@@ -57,6 +61,7 @@ class ViewController: UIViewController {
             return true
         }
         
+        // pop up alert for number
         let alertNum = UIAlertController(title: "Alert", message: "Number Please", preferredStyle: UIAlertController.Style.alert)
         alertNum.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         
@@ -65,6 +70,7 @@ class ViewController: UIViewController {
             return
         }
         
+        // pop up alert for empty
         let alertEmp = UIAlertController(title: "Alert", message: "Can't Empty", preferredStyle: UIAlertController.Style.alert)
         alertEmp.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         
@@ -72,11 +78,7 @@ class ViewController: UIViewController {
             self.present(alertEmp, animated: true, completion: nil)
             return
         }
-        
-        if !strChecker(str:WeightText.text!) || !strChecker(str:HeightText.text!){
-            self.present(alertNum, animated: true, completion: nil)
-            return
-        }
+    
         
         var weight:Double! = 0.0
         var height:Double! = 0.0
@@ -86,6 +88,7 @@ class ViewController: UIViewController {
         weight = Double(WeightText.text!)
         height = Double(HeightText.text!)
         
+        // cal logic
         if MeasurementStatus == "metric"{
             BMIresult = weight/((height)*(height))
         }else{
@@ -97,6 +100,7 @@ class ViewController: UIViewController {
         BMIResult.text = formatBMI
         ResultStatus.text = resultStatus
         
+        // bmi range
         func BMIrange(BMI:Double)->String{
             if BMI<16{
                 return "Severe Thinness"
@@ -117,16 +121,19 @@ class ViewController: UIViewController {
             }
         }
         
+        // date formatter
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let dateStr = dateFormatter.string(from: now)
         
+        // storage
         let weightStr:String = String(weight)
         let heightStr:String = String(height)
         let BMIstr = String(BMIresult)
         
+        // array dict format to store data
         InfoArr = defaults.object(forKey: "arrayList") as? [[String:String]] ?? [[String:String]]()
         var dict = [String:String]()
         dict["height"] = heightStr
@@ -160,6 +167,7 @@ class ViewController: UIViewController {
         
     }
     
+    // done button
     @IBAction func doneBtn_Pressed(_ sender: UIButton) {
         // convert weight and height to double
         let vc = storyboard?.instantiateViewController(identifier: "tableView") as! TableViewController
@@ -167,6 +175,7 @@ class ViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    // clear button to reset
     @IBAction func clrBtn_Pressed(_ sender: UIButton) {
         NameText.text = ""
         AgeText.text = ""
@@ -177,6 +186,6 @@ class ViewController: UIViewController {
         ResultStatus.text = "--Your Status to be show--"
     }
     
-    
 }
+
 
